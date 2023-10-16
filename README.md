@@ -5,6 +5,8 @@
 * a maven project to demonsrtate a legendary Math library
 * a unit test test scrip using JUnit Test Framework
 * a Continuous Integration (CI) script using GitHub Actions
+* A Regresstion Testing technique (refactor code to use recursion, and still green)
+* A Test Driven Develoment test scirpt
 *....
 
 #### Screnshots
