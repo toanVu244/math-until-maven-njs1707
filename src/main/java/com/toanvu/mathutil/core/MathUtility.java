@@ -29,7 +29,7 @@ public class MathUtility {
         }
         //sống sót đến chỗ này, auto n= 2..20. vì nếu chết dọc dg ở cụm if ở trên rồi, ko cần else nếu trc đó có return
         
-        long result = 1;
+        long result = 10;
         for (int i = 2; i <= n; i++) {
             result *= i;
         }
