@@ -1,0 +1,24 @@
+name: Math Utility Repo applying  #name là tương đương Console.log ghi lại nhật kí chạy các lệnh
+
+
+on:
+  push: 
+    branches: [ "main" ] # bất kì ai push code lên nhánh main, kho code chính 
+  pull_request:
+    branches: [ "main" ]
+
+jobs:      #Thì tự động thực thi các lệnh dưới đây
+  build:    # Build app -> .jar .war bằng cách
+
+    runs-on: ubuntu-latest # mượn một server bên Mỹ, cài sẵn OS Ubuntu
+
+    steps:
+    - uses: actions/checkout@v3  #.Có server rồi, dowload code từ GH về server này
+    - name: Set up JDK 20 - Mượn JDK 20 #3. Cho mượn cái JDK 
+      uses: actions/setup-java@v3
+      with:
+        java-version: '20'  #4. khai bóa JDK version ứng với file pom.xml
+        distribution: 'temurin'
+        cache: maven
+    - name: Build with Maven  -Tạo file .jar          #Mượn Maven, chạy lệnh đóng gói, test luôn 
+      run: mvn -B package --file pom.xml
